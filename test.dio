@@ -63,7 +63,7 @@
                 <mxCell id="269" value="prefecture&#10;(integer型, null:false)" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;rounded=1;dashed=1;align=center;verticalAlign=middle;" parent="263" vertex="1">
                     <mxGeometry y="176" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="270" value="delivery_days&#10;(integer型, null:false)" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;dashed=1;align=center;verticalAlign=middle;" parent="263" vertex="1">
+                <mxCell id="270" value="delivery_day&#10;(integer型, null:false)" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;dashed=1;align=center;verticalAlign=middle;" parent="263" vertex="1">
                     <mxGeometry y="206" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="271" value="price(integer型, null:false)" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;dashed=1;align=center;verticalAlign=middle;" parent="263" vertex="1">
