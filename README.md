@@ -2,36 +2,35 @@
 
 ## usersテーブル
 
-|Column          |Type  |Options    |
-|----------------|------|-----------|
-|nickname        |string|null: false|
-|email           |string|null: false|
-|password        |string|null: false|
-|first_name      |string|null: false|
-|last_name       |string|null: false|
-|first_name(kana)|string|null: false|
-|last_name(kana) |string|null: false|
-|birthday        |date  |null: false|
+|Column             |Type  |Options    |
+|-------------------|------|-----------|
+|nickname           |string|null: false|
+|email              |string|null: false, unique: true|
+|encrypted_password |string|null: false|
+|first_name         |string|null: false|
+|last_name          |string|null: false|
+|first_name_kana   |string|null: false|
+|last_name_kana    |string|null: false|
+|birthday           |date  |null: false|
 
 ### Association
-has_one: address
 has_many: items
 has_many: orders
 
 
 ## itemsテーブル
 
-|Column          |Type     |Options          |
-|----------------|---------|-----------------|
-|item_name       |string   |null: false      |
-|explanation     |text     |null: false      |
-|category        |integer  |null: false      |
-|condition       |integer  |null: false      |
-|postage         |integer  |null: false      |
-|region          |integer  |null: false      |
-|shipping_date   |integer  |null: false      |
-|price           |string   |null: false      |
-|user_id         |reference|foreign_key: true|
+|Column          |Type      |Options          |
+|----------------|----------|-----------------|
+|item_name       |string    |null: false      |
+|explanation     |text      |null: false      |
+|category_id     |integer   |null: false      |
+|condition_id    |integer   |null: false      |
+|postage_id      |integer   |null: false      |
+|prefecture_id   |integer   |null: false      |
+|delivery_days_id|integer   |null: false      |
+|price           |integer   |null: false      |
+|user            |references|null: false, foreign_key: true|
 
 ### Association
 has_one: order
@@ -43,30 +42,27 @@ belongs_to: user
 |Column          |Type     |Options            |
 |----------------|---------|-------------------|
 |postal_code     |string   |null: false        |
-|prefecture      |integer  |null: false        |
+|prefecture_id   |integer  |null: false        |
 |city            |string   |null: false        |
 |street          |string   |null: false        |
 |building        |string   |                   |
 |phone_number    |string   |null: false        |
-|user_id         |reference|foreign_key: true  |
+|order           |references|null: false, foreign_key: true  |
 
 ### Association
-has_one: order
-belongs_to: user
-
+belongs_to: order
 
 
 ## ordersテーブル
 
-|Column          |Type       |Options            |
-|----------------|-----------|-------------------|
-|user_id         |reference  |foreign_key: true  |
-|item_id         |reference  |foreign_key: true  |
-|address_id      |reference  |foreign_key: true  |
+|Column          |Type        |Options                         |
+|----------------|------------|--------------------------------|
+|user            |references  |null: false, foreign_key: true  |
+|item            |references  |null: false, foreign_key: true  |
 
 
 ### Association
-belongs_to: address
+has_one: address
 belongs_to: item
 belongs_to: user
 
