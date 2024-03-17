@@ -19,8 +19,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if current_user && @item.user_id == current_user.id
-      # 編集画面を表示
+    if @item.user_id == current_user.id && @item.order.nil?
+    # 編集画面を表示
     else
       redirect_to root_path
     end
